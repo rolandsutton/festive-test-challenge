@@ -61,6 +61,6 @@ public class SleighTests
         
         // Assert
         Assert.That(result, Is.True);
-        Assert.That(sleigh.State, Is.EqualTo(SleighState.InTransit));
+        Assert.That(sleigh.State, Is.EqualTo(SleighState.Flying));
     }
 }

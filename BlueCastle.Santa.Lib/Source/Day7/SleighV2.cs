@@ -1,22 +1,29 @@
-﻿namespace BlueCastle.Santa.Lib.Source.day5;
+﻿namespace BlueCastle.Santa.Lib.Source.Day7;
 
-public class SleighV2: ISleigh
+public class Sleighv2: ISleigh
 {
     private readonly IDriverValidator _driverValidator;
     private readonly TimeProvider _timeProvider;
+    private readonly IEventAggregator _eventAggregator;
+    private readonly ILocationProvider _locationProvider;
     private SleighState _state;
     private string _driver = null;
 
-    public SleighV2(IDriverValidator driverValidator,
+    public Sleighv2(IDriverValidator driverValidator,
         TimeProvider timeProvider,
+        IEventAggregator eventAggregator,
+        ILocationProvider locationProvider,
         SleighState state)
     {
         _driverValidator = driverValidator;
         _timeProvider = timeProvider;
+        _eventAggregator = eventAggregator;
+        _locationProvider = locationProvider;
         _state = state;
+        _ = _timeProvider.CreateTimer(NotifyPosition, null, TimeSpan.FromSeconds(10), TimeSpan.FromSeconds(10));
     }
-    
-    public SleighV2(IDriverValidator driverValidator, TimeProvider timeProvider) :this(driverValidator, timeProvider, SleighState.Ready)
+
+    public Sleighv2(IDriverValidator driverValidator, TimeProvider timeProvider, IEventAggregator eventAggregator, ILocationProvider locationProvider): this(driverValidator, timeProvider, eventAggregator, locationProvider, SleighState.Ready)
     {
     }
     
@@ -44,5 +51,11 @@ public class SleighV2: ISleigh
             throw new ArgumentException("Invalid driver");
         }
         _driver = driver; 
+    }
+    
+    private void NotifyPosition(object? state)
+    {
+        var position = _locationProvider.GetPosition(this);
+        _eventAggregator.GetEvent<IPositionEvent>().Publish(new PositionEvent(position));
     }
 }

@@ -10,7 +10,7 @@ public class Sleigh: ISleigh
     {
         if(State == SleighState.Ready)
         {
-            _state = SleighState.InTransit;
+            _state = SleighState.Flying;
             return true;
         }
         

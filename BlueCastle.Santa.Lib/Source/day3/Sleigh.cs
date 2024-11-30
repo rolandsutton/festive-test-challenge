@@ -19,7 +19,7 @@ public class Sleigh: ISleigh
     {
         if(State == SleighState.Ready && !string.IsNullOrWhiteSpace(Driver))
         {
-            _state = SleighState.InTransit;
+            _state = SleighState.Flying;
             return true;
         }
         

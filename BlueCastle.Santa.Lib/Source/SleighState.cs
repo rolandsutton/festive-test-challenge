@@ -4,5 +4,5 @@ public enum SleighState
 {
     OnStandby,
     Ready,  
-    InTransit
+    Flying
 }

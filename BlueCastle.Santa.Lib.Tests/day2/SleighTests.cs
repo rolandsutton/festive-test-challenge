@@ -18,11 +18,11 @@ public class SleighTests
         
         // Assert
         Assert.That(result, Is.True);
-        Assert.That(sleigh.State, Is.EqualTo(SleighState.InTransit));
+        Assert.That(sleigh.State, Is.EqualTo(SleighState.Flying));
     }
     
     [TestCase(SleighState.OnStandby)]
-    [TestCase(SleighState.InTransit)]
+    [TestCase(SleighState.Flying)]
     public void GivenSleighNotReady_WhenGoCalled_ThenStateNotInTransit(SleighState state)
     {
         // Arrange

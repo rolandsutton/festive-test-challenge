@@ -26,7 +26,7 @@ public abstract class Sleigh: ISleigh
            && ValidateDriver(_driver)
            && _timeProvider.GetLocalNow().Day == 24 && _timeProvider.GetLocalNow().Month == 12) 
         {
-            _state = SleighState.InTransit;
+            _state = SleighState.Flying;
             return true;
         }
         

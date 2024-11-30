@@ -3,17 +3,17 @@ namespace BlueCastle.Santa.Lib.Source.day5;
 
 public class Sleigh: ISleigh
 {
-    private readonly day4.IDriverValidator _driverValidator;
+    private readonly IDriverValidator _driverValidator;
     private SleighState _state;
     private string _driver = null;
 
-    public Sleigh(day4.IDriverValidator driverValidator, SleighState state)
+    public Sleigh(IDriverValidator driverValidator, SleighState state)
     {
         _driverValidator = driverValidator;
         _state = state;
     }
     
-    public Sleigh(day4.IDriverValidator driverValidator) :this(driverValidator, SleighState.Ready)
+    public Sleigh(IDriverValidator driverValidator) :this(driverValidator, SleighState.Ready)
     {
     }
     
@@ -23,7 +23,7 @@ public class Sleigh: ISleigh
            && !string.IsNullOrWhiteSpace(Driver)
            && DateTime.Now.Day == 24 && DateTime.Now.Month == 12) 
         {
-            _state = SleighState.InTransit;
+            _state = SleighState.Flying;
             return true;
         }
         
