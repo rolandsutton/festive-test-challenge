@@ -1,4 +1,4 @@
-namespace BlueCastle.Santa.Lib.Source.Day7;
+namespace BlueCastle.Santa.Lib.Source.day7;
 
 public interface IEventAggregator
 {

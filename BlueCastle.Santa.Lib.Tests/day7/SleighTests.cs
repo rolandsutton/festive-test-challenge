@@ -1,4 +1,4 @@
-﻿using BlueCastle.Santa.Lib.Source.Day7;
+﻿using BlueCastle.Santa.Lib.Source.day7;
 using Microsoft.Extensions.Time.Testing;
 using NSubstitute;
 using NUnit.Framework;

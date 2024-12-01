@@ -23,4 +23,8 @@
       <ProjectReference Include="..\BlueCastle.Santa.Lib\BlueCastle.Santa.Lib.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="day10\" />
+    </ItemGroup>
+
 </Project>
