@@ -10,10 +10,3 @@ public class NaughtyListChangedEvent :IChangedEvent<NaughtyListChangedEvent>
     {
     }
 }
-
-public interface IChangedEvent<T>
-{
-    void Publish(T changedEvent);
-    
-    void Subscribe(Action<T> action);
-}

@@ -6,6 +6,19 @@ namespace BlueCastle.Santa.Lib.Tests.day1;
 public class SleighTests
 {
     [Test]
+    public void GivenSleigh_WhenCreated_ThenInProgressIsFalse()
+    {
+        // Arrange
+        var sleigh = new Sleigh();
+        
+        // Act
+        var result = sleigh.InProgress;
+        
+        // Assert
+        Assert.That(result, Is.False);
+    }
+    
+    [Test]
     public void GivenSleigh_WhenGoCalled_ThenInProgressIsTrue()
     {
         // Arrange
