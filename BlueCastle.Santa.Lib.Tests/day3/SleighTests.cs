@@ -50,7 +50,7 @@ public class SleighTests
     }
     
     [Test]
-    public void GivenSleighWithDriver_WhenGoCalled_ThenStateIsInProgress()
+    public void GivenSleighWithDriver_WhenGoCalled_ThenStateIsFlying()
     {
         // Arrange
         var sleigh = new Sleigh();

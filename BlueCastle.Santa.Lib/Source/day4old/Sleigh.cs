@@ -1,30 +1,25 @@
-﻿namespace BlueCastle.Santa.Lib.Source.day5;
 
-public class SleighV2: ISleigh
+namespace BlueCastle.Santa.Lib.Source.day4old;
+
+public class Sleigh: ISleigh
 {
     private readonly IDriverValidator _driverValidator;
-    private readonly TimeProvider _timeProvider;
     private SleighState _state;
     private string _driver = null;
 
-    public SleighV2(IDriverValidator driverValidator,
-        TimeProvider timeProvider,
-        SleighState state)
+    public Sleigh(IDriverValidator driverValidator, SleighState state)
     {
         _driverValidator = driverValidator;
-        _timeProvider = timeProvider;
         _state = state;
     }
     
-    public SleighV2(IDriverValidator driverValidator, TimeProvider timeProvider) :this(driverValidator, timeProvider, SleighState.Ready)
+    public Sleigh(IDriverValidator driverValidator) :this(driverValidator, SleighState.Ready)
     {
     }
     
     public bool Go()
     {
-        if(State == SleighState.Ready 
-           && !string.IsNullOrWhiteSpace(Driver)
-           && _timeProvider.GetLocalNow().Day == 24 && _timeProvider.GetLocalNow().Month == 12) 
+        if(State == SleighState.Ready && !string.IsNullOrWhiteSpace(Driver))
         {
             _state = SleighState.Flying;
             return true;
