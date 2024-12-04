@@ -20,7 +20,7 @@ public class MissionControlTests
     }
     
     [Test]
-    public void GivenMissionControlInTheSmmer_WhenGo_ThenNothing()
+    public void GivenMissionControlInTheSummer_WhenGo_ThenNothing()
     {
         // Arrange
         _timeProvider.SetUtcNow(new DateTimeOffset(2024, 6, 1, 0, 0, 0, TimeSpan.Zero));
