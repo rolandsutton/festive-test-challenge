@@ -4,14 +4,15 @@ using Microsoft.Extensions.Time.Testing;
 using NSubstitute;
 using NUnit.Framework;
 
-namespace BlueCastle.Santa.Lib.Tests.day5;
+namespace BlueCastle.Santa.Lib.Tests.day4;
 
 public class SleighTests
 {
     private FakeTimeProvider _timerProvider;
     private IDriverValidator _driverValidator;
     private Func<SleighV2> _sleighFactory;
-
+//No idea how to test sleigh, however sleigh V2 is tested below
+    
     [SetUp]
     public void Setup()
     {

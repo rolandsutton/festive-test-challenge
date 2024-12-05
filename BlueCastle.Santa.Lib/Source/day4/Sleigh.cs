@@ -20,7 +20,7 @@ public class Sleigh: ISleigh
     public bool Go()
     {
         if(State == SleighState.Ready 
-           && !string.IsNullOrWhiteSpace(Driver)
+           && !_driverValidator.IsValid(Driver)
            && DateTime.Now.Day == 24 && DateTime.Now.Month == 12) 
         {
             _state = SleighState.Flying;

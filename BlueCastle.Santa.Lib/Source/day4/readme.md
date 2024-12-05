@@ -4,7 +4,7 @@ As extra precaution, Santa would like to ensure that sleighs can only be driven
 on Christmas Eve.
 
 Hint
-TimeProvider
+Using the .net8 TimeProvider, SleighV2 can be tested.
 
 Bonus Points
 Claus enterprises has a potential new client Mr E. Bunny who will be using the sleighs

@@ -2,7 +2,7 @@ using BlueCastle.Santa.Lib.Source.day4;
 using NSubstitute;
 using NUnit.Framework;
 
-namespace BlueCastle.Santa.Lib.Tests.day4;
+namespace BlueCastle.Santa.Lib.Tests.day4old;
 
 public class SleighTests
 {
