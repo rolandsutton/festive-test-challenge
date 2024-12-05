@@ -17,7 +17,7 @@ public class Sleigh: ISleigh
     
     public bool Go()
     {
-        if(State == SleighState.Ready && !string.IsNullOrWhiteSpace(Driver))
+        if(State == SleighState.Ready && IsValidDriver(Driver))
         {
             _state = SleighState.Flying;
             return true;
@@ -25,16 +25,20 @@ public class Sleigh: ISleigh
         
         return false;
     }
+    public void AddDriver(string driver)
+    {
+        if(IsValidDriver(driver))
+        {
+            _driver = driver;
+        }
+    }
 
     public SleighState State => _state;
 
     public string Driver => _driver;
-    
-    public void AddDriver(string driver)
+
+    private bool IsValidDriver(string target)
     {
-        if(!string.IsNullOrWhiteSpace(driver))
-        {
-            _driver = driver;
-        }
+        return !string.IsNullOrWhiteSpace(target);
     }
 }
