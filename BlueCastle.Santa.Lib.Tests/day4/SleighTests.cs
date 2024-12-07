@@ -70,7 +70,7 @@ public class SleighTests
     }
     
     [Test]
-    public void GivenTransitExample_WhenGo_ThenSleighWillWork()
+    public void GivenTransitExample_WhenGo_ThenSleighWillFly()
     {
         // Arrange
         _timerProvider.SetUtcNow(new DateTime(2021, 12, 23, 23, 59, 59));
