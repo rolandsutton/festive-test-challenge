@@ -1,7 +1,6 @@
 # Information
 
-As extra precaution, Santa would like to ensure that sleighs can only be driven
-on Christmas Eve.
+Each sleigh contains the rules as to who can drive it.
 
 Hint
 TimeProvider
