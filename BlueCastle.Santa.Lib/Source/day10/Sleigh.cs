@@ -2,7 +2,7 @@
 
 namespace BlueCastle.Santa.Lib.Source.day10;
 
-public class Sleigh: ISleigh
+public class  Sleigh: ISleigh
 {
     private readonly IEventAggregator _eventAggregator;
     private SleighState _state;
